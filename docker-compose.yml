@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  freesurfer_epi_coreg:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    env_file:
+      - dev.env
+    volumes:
+      - ./data/input:/data/input:ro
+      - ./data/output:/data/output
